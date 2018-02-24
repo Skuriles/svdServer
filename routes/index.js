@@ -1,12 +1,13 @@
-var keystone = require('keystone');
-var blogRoutes = require('./blogRoutes')
-
+var blogRoutes = require("./blogRoutes");
+var calendarRoutes = require("./calendarRoutes");
 
 // Setup Route Bindings
-exports = module.exports = function (app) {
-	// Views	
-	app.post('/blog/getCategories', blogRoutes.getCategories);
-	app.post('/blog/:category?', blogRoutes.getCategories);
-	app.post('/blog/post/:post', blogRoutes.getPost);	
-
+exports = module.exports = function(app) {
+	// Posts
+	app.post("/blog/getPostsByCategory", blogRoutes.getPostsByCategory);
+	app.post("/blog/:category?", blogRoutes.getCategory);
+	app.post("/blog/post/:post", blogRoutes.getPost);
+	// Calendar
+	app.post("/calendar/getCalendar", calendarRoutes.getCalendar);
+	app.post("/calendar/getPlayCalendar", calendarRoutes.getPlayCalendar);
 };

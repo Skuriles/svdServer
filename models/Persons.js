@@ -7,6 +7,7 @@ var Types = keystone.Field.Types;
  */
 
 var Person = new keystone.List('Person', {
+	autokey: { path: 'slug', from: 'name', unique: true },
 	map: { name: 'name' },
 });
 
