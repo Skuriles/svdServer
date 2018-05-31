@@ -205,27 +205,58 @@ function filterEventProperties(events) {
 	for (let i = 0; i < events.length; i++) {
 		const event = events[i];
 		var newEvent = {
-			summary: event.summary,
-			start: formatDate(event.start),
-			end: formatDate(event.end)
+			summary: formatSummary(event.summary),
+			start: formatDate(event.start, true),
+			end: formatDate(event.end, false)
 		};
 		resultList.push(newEvent);
 	}
 	return resultList;
 }
 
-function formatDate(date) {
+function formatSummary(summary) {
+	let newSummary = summary.split("Spieltag ");
+	if (newSummary.length === 1) {
+		return summary;
+	}
+	newSummary = newSummary[0] + "Spieltag<br>" + newSummary[1];
+	return newSummary;
+}
+
+function formatDate(date, isStart) {
 	var newDate;
 	if (date.date) {
-		var dateArr = date.date.split("-");
-		newDate = dateArr[2] + "." + dateArr[1] + "." + dateArr[0];
+		if (!isStart) {
+			var dateArr = date.date.split("-");
+			newDate = dateArr[2] - 1 + "." + dateArr[1] + "." + dateArr[0];
+		} else {
+			var dateArr = date.date.split("-");
+			newDate = dateArr[2] + "." + dateArr[1] + "." + dateArr[0];
+		}
 	} else {
+		if (!isStart) {
+			return null;
+		}
 		var dateTime = new Date(date.dateTime);
 		var month = dateTime.getMonth() + 1;
 		if (month < 10) {
 			month = "0" + month;
 		}
-		newDate = dateTime.getDate() + "." + month + "." + dateTime.getFullYear();
+		let minutes = dateTime.getMinutes();
+		if (dateTime.getMinutes() === 0) {
+			minutes = "00";
+		}
+		newDate =
+			dateTime.getDate() +
+			"." +
+			month +
+			"." +
+			dateTime.getFullYear() +
+			" - " +
+			dateTime.getHours() +
+			":" +
+			minutes +
+			" Uhr";
 	}
 	return newDate;
 }

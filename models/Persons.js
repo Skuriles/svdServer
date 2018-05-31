@@ -1,4 +1,4 @@
-var keystone = require('keystone');
+var keystone = require("keystone");
 var Types = keystone.Field.Types;
 
 /**
@@ -6,23 +6,26 @@ var Types = keystone.Field.Types;
  * ==========
  */
 
-var Person = new keystone.List('Person', {
-	autokey: { path: 'slug', from: 'name', unique: true },
-	map: { name: 'name' },
+var Person = new keystone.List("Person", {
+	autokey: { path: "slug", from: "name", unique: true },
+	map: { name: "name" }
 });
 
 Person.add({
 	name: { type: String, required: true },
 	coach: { type: String },
-	position: { type: String },
-	isPosition: { type: Boolean},
+	positionVorstand: { type: String },
+	positionJugend: { type: String },
+	positionFoerder: { type: String },
+	isPosition: { type: Boolean },
 	isCoach: { type: Boolean },
-	categories: { type: Types.Relationship, ref: 'PersonCategory', many: true },
+	categories: { type: Types.Relationship, ref: "PersonCategory", many: true }
 });
 
-Person.schema.virtual('content.full').get(function () {
+Person.schema.virtual("content.full").get(function() {
 	return this.content.extended || this.content.brief;
 });
 
-Person.defaultColumns = 'name, isPosition, isCoach, position, coach';
+Person.defaultColumns =
+	"name, isPosition, isCoach, positionVorstand, positionJugend, positionFoerder, coach";
 Person.register();
