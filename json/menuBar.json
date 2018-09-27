@@ -1,0 +1,140 @@
+{
+  "menuBarItems": [
+    {
+      "path": "/start",
+      "name": "Start"
+    },
+    {
+      "path": "/spielbetrieb",
+      "name": "Spielbetrieb",
+      "childs": [
+        {
+          "path": "/aktiv",
+          "name": "Aktive",
+          "childs": [
+            {
+              "path": "/herren_1",
+              "name": "Herren 1"
+            },
+            {
+              "path": "/herren_2",
+              "name": "Herren 2"
+            },
+            {
+              "path": "/herren_3",
+              "name": "Herren 3"
+            },
+            {
+              "path": "/damen_1",
+              "name": "Damen 1"
+            },
+            {
+              "path": "/damen_2",
+              "name": "Damen 2"
+            },
+            {
+              "path": "/ah",
+              "name": "AH"
+            }
+          ]
+        },
+        {
+          "path": "/jugend",
+          "name": "Jugend",
+          "childs": [
+            {
+              "path": "/b_maed",
+              "name": "B Juniorinnen"
+            },
+            {
+              "path": "/c_maed",
+              "name": "C Juniorinnen"
+            },
+            {
+              "path": "/a_jug",
+              "name": "A Jugend"
+            },
+            {
+              "path": "/b_jug",
+              "name": "B Jugend"
+            },
+            {
+              "path": "/c_jug",
+              "name": "C Jugend"
+            },
+            {
+              "path": "/d1_jug",
+              "name": "D1 Jugend"
+            },
+            {
+              "path": "/d2_jug",
+              "name": "D2 Jugend"
+            },
+            {
+              "path": "/e1_jug",
+              "name": "E1 Jugend"
+            },
+            {
+              "path": "/e2_jug",
+              "name": "E2 Jugend"
+            },
+            {
+              "path": "/F_jug",
+              "name": "F Jugend"
+            },
+            {
+              "path": "/bambini",
+              "name": "Bambinis"
+            }
+          ]
+        },
+        {
+          "path": "/training",
+          "name": "Trainingszeiten"
+        }
+      ]
+    },
+    {
+      "path": "/verein",
+      "name": "Verein",
+      "childs": [
+        {
+          "path": "/trainer",
+          "name": "Trainer"
+        },
+        {
+          "path": "/vorstand",
+          "name": "Vorstandschaft"
+        },
+        {
+          "path": "/foerder_vor",
+          "name": "Förderverein"
+        },
+        {
+          "path": "/jugend_vor",
+          "name": "Jugendvorstandschaft"
+        }       
+      ]
+    },
+    {
+      "path": "/schiri",
+      "name": "Schiedsrichter"
+    },
+    {
+      "path": "/termine",
+      "name": "Termine"
+    },
+    {
+      "path": "/kontakt",
+      "name": "Kontakt"
+    }    ,
+    {
+      "path": "/mitglied",
+      "name": "MItglied werden"
+    },
+    {
+      "path": "/bus",
+      "name": "SVD Bus"
+    }
+  ]
+}
