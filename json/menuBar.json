@@ -5,7 +5,7 @@
       "name": "Start"
     },
     {
-      "path": "/spielbetrieb",
+      "path": "[./]",
       "name": "Spielbetrieb",
       "childs": [
         {
